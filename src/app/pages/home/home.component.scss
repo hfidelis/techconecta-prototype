@@ -81,15 +81,8 @@ main {
     }
   }
 
-  .posts {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
-
-    width: 100%;
+  .columns {
+    margin: 0;
   }
 
 }
