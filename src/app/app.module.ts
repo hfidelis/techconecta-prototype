@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
 import { PostComponent } from './components/post/post.component';
+import { CategoryTranslatePipe } from './pipes/category-translate.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PostComponent } from './components/post/post.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    PostComponent
+    PostComponent,
+    CategoryTranslatePipe
   ],
   imports: [
     BrowserModule,
