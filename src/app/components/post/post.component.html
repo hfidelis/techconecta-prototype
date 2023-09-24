@@ -19,7 +19,7 @@
         <fa-icon [icon]="faUser"></fa-icon>
         {{ post.userOwner }}
       </span>
-      <span class="post_category">
+      <span class="post_category" [style.backgroundColor]="post.category | categoryColor">
         {{ post.category | categoryTranslate }}
       </span>
     </div>

@@ -9,6 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
 import { PostComponent } from './components/post/post.component';
 import { CategoryTranslatePipe } from './pipes/category-translate.pipe';
+import { CategoryColorPipe } from './pipes/category-color.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CategoryTranslatePipe } from './pipes/category-translate.pipe';
     HomeComponent,
     FooterComponent,
     PostComponent,
-    CategoryTranslatePipe
+    CategoryTranslatePipe,
+    CategoryColorPipe
   ],
   imports: [
     BrowserModule,
