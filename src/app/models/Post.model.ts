@@ -1,11 +1,11 @@
 export interface Post {
-  id: number;
-  category: string;
-  userOwner: string;
-  title: string;
-  subtitle: string;
-  image: string;
-  content: string;
-  date: Date;
-  views: number;
+  postId: number
+  creatorId: number
+  category: string
+  createdAt: string
+  title: string
+  subtitle: string
+  content: string
+  postImage: string
+  postViews: number
 }

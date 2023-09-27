@@ -1,26 +1,26 @@
-<div class="post">
-  <img src="{{ post.image }}" alt="Imagem do Post">
+<div class="post" (click)="pageRedirect(post.postId)">
+  <img src="assets/img_test.jpg" alt="Imagem do Post">
   <h2>{{ post.title }}</h2>
   <div class="post_info">
 
     <div class="post_section">
       <span class="post_date">
         <fa-icon [icon]="faCalendarDays"></fa-icon>
-        {{ post.date | date:'dd/MM/yyyy'}}
+        {{ post.createdAt | date:'dd/MM/yyyy'}}
       </span>
       <span class="post_views">
         <fa-icon [icon]="faEye"></fa-icon>
-        {{ post.views }}
+        {{ post.postViews }}
       </span>
     </div>
 
     <div class="post_section">
-      <span class="post_owner">
+      <span class="post_owner" *ngIf="user$ | async as user">
         <fa-icon [icon]="faUser"></fa-icon>
-        {{ post.userOwner }}
+        {{ user.username }}
       </span>
       <span class="post_category" [style.backgroundColor]="post.category | categoryColor">
-        {{ post.category | categoryTranslate }}
+        {{ post.category }}
       </span>
     </div>
   </div>

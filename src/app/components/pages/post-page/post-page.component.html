@@ -1,0 +1,6 @@
+<div class="post" *ngIf="post$ | async as post">
+  <span>Criador {{ post.creatorId }}</span>
+  <span>Categoria {{ post.category }}</span>
+  <span>Titulo {{ post.title }}</span>
+  <span>Conteudo {{ post.content }}</span>
+</div>

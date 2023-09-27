@@ -15,11 +15,11 @@
       <fa-icon [icon]="faSquarePlus"></fa-icon>
     </button>
   </section>
-  <section class="posts columns is-multiline mt-2 px-6">
+  <section class="posts mt-2">
     <div *ngIf="!posts$">
       <h1>Nenhuma Postagem no momento! :(</h1>
     </div>
-    <div *ngIf="posts$ | async as posts">
+    <div class="columns is-multiline px-6" *ngIf="posts$ | async as posts">
       <div
         *ngFor="let post of posts"
         class="column is-half-tablet is-one-third-desktop is-one-quarter-fullhd"

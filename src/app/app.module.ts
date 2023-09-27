@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PostComponent } from './components/post/post.component';
 import { CategoryTranslatePipe } from './pipes/category-translate.pipe';
 import { CategoryColorPipe } from './pipes/category-color.pipe';
+import { PostPageComponent } from './components/pages/post-page/post-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CategoryColorPipe } from './pipes/category-color.pipe';
     FooterComponent,
     PostComponent,
     CategoryTranslatePipe,
-    CategoryColorPipe
+    CategoryColorPipe,
+    PostPageComponent
   ],
   imports: [
     BrowserModule,
