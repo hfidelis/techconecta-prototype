@@ -17,5 +17,5 @@ body {
 
 :has(.post:hover) .post:not(:hover) {
   transform: scale(0.95);
-  filter: grayscale(1) blur(.1rem);
+  filter: grayscale(1);
 }

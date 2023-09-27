@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IconDefinition, faChevronDown, faSquarePlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faMagnifyingGlass, faSquarePlus, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
 import { Post } from 'src/app/models/Post.model';
 import { PostService } from 'src/app/services/post.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,14 +15,18 @@ export class HomeComponent implements OnInit {
   faSquarePlus: IconDefinition = faSquarePlus;
   faMagnifyingGlass: IconDefinition = faMagnifyingGlass;
 
-  posts!: Array<Post>;
+  posts$!: Observable<Array<Post>>;
 
   constructor(
     private postService: PostService
   ) {}
 
   ngOnInit(): void {
-    this.posts = this.postService.getPosts()
+    this.fetchPosts();
+  }
+
+  fetchPosts(): void {
+    this.posts$ = this.postService.getPosts();
   }
 
 }
