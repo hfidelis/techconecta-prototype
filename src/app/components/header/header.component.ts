@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { IconDefinition, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -8,4 +9,10 @@ import { IconDefinition, faUser } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent {
   faUser: IconDefinition = faUser;
+
+  constructor(private router: Router) {}
+
+  loginRedirect() {
+    this.router.navigate(['/login']);
+  }
 }

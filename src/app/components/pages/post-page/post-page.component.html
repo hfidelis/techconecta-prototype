@@ -1,5 +1,5 @@
 <div class="post" *ngIf="post$ | async as post">
-  <span>Criador {{ post.creatorId }}</span>
+  <span>Criador {{ post.creator.userId }}</span>
   <span>Categoria {{ post.category }}</span>
   <span>Titulo {{ post.title }}</span>
   <span>Conteudo {{ post.content }}</span>
