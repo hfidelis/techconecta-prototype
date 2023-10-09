@@ -15,12 +15,12 @@
     </div>
 
     <div class="post_section">
-      <span class="post_owner" *ngIf="user$ | async as user">
+      <span class="post_owner">
         <fa-icon [icon]="faUser"></fa-icon>
-        {{ user.username }}
+        {{ post.creator.username }}
       </span>
       <span class="post_category" [style.backgroundColor]="post.category | categoryColor">
-        {{ post.category }}
+        {{ post.category | categoryTranslate }}
       </span>
     </div>
   </div>
