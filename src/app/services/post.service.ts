@@ -3,16 +3,17 @@ import { Post } from '../models/Post.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/User.model';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  private readonly apiURL = 'http://20.226.34.135/api/'
+  private readonly apiURL = environment.baseApiUrl;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) {}
 
   getPosts(): Observable<Array<Post>> {
