@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { faChevronDown, faMagnifyingGlass, faSquarePlus, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { Post } from 'src/app/models/Post.model';
+import { MessagerService } from 'src/app/services/messager.service';
 import { PostService } from 'src/app/services/post.service';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
