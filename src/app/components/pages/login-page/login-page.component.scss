@@ -1,0 +1,7 @@
+@import 'variables.scss';
+
+main {
+  min-width: 100vw;
+  min-height: 80vh;
+  background-image: linear-gradient(to bottom, $gray, $black);
+}
