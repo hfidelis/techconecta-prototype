@@ -1,6 +1,8 @@
+import { User } from "./User.model"
+
 export interface Post {
   postId: number
-  creatorId: number
+  creator: User
   category: string
   createdAt: string
   title: string
