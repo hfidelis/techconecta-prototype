@@ -16,6 +16,7 @@ import { PostPageComponent } from './components/pages/post-page/post-page.compon
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 import { MessagerComponent } from './components/messager/messager.component';
+import { CreatePostComponent } from './components/create-post/create-post.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MessagerComponent } from './components/messager/messager.component';
     PostPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    MessagerComponent
+    MessagerComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
