@@ -10,8 +10,8 @@
         <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
       </button>
     </div>
-    <button id="createButton" class="button">
-      <a routerLink="/create-post"><span>Criar</span></a>
+    <button id="createButton" class="button" (click)="redirectCreatePost()">
+      <span>Criar</span>
       <fa-icon [icon]="faSquarePlus"></fa-icon>
     </button>
   </section>

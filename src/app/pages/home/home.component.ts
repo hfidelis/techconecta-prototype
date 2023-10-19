@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { faChevronDown, faMagnifyingGlass, faSquarePlus, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { Post } from 'src/app/models/Post.model';
-import { MessagerService } from 'src/app/services/messager.service';
 import { PostService } from 'src/app/services/post.service';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +19,8 @@ export class HomeComponent implements OnInit {
   posts$!: Observable<Array<Post>>;
 
   constructor(
-    private postService: PostService
+    private postService: PostService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -29,6 +29,10 @@ export class HomeComponent implements OnInit {
 
   fetchPosts(): void {
     this.posts$ = this.postService.getPosts();
+  }
+
+  redirectCreatePost() {
+    this.router.navigate(['/create-post'])
   }
 
 }
