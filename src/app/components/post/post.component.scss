@@ -23,6 +23,7 @@
     object-fit: cover;
     border: .2em solid $light-gray;
     aspect-ratio: 1;
+    filter: brightness(80%);
   }
 
   h2 {
