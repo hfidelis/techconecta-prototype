@@ -87,17 +87,7 @@ main {
           outline: none;
         }
 
-        .form_error {
-          font-weight: 500;
-          font-size: .9rem;
-          color: rgb(201, 43, 43);
-
-          > fa-icon {
-            margin-left: .3rem;
-          }
-
-          animation: shake 400ms ease-in-out 1;
-        }
+        
 
         .passwordDiv {
           display: flex;
@@ -178,23 +168,5 @@ main {
 
   100% {
     box-shadow: 0 .4rem 1.4rem rgb(255 255 255 / .15);
-  }
-}
-
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-0.5rem);
-  }
-  50% {
-    transform: translateX(0.5rem);
-  }
-  75% {
-    transform: translateX(-0.5rem);
-  }
-  100% {
-    transform: translateX(0);
   }
 }

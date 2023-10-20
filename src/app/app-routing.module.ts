@@ -5,6 +5,7 @@ import { PostPageComponent } from './components/pages/post-page/post-page.compon
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
+import { CRUDUsersComponent } from './components/crud-users/crud-users.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'posts/:id', component: PostPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
-  { path: 'create-post', component: CreatePostComponent}
+  { path: 'create-post', component: CreatePostComponent},
+  { path: 'CRUD-users', component: CRUDUsersComponent}
 ];
 
 @NgModule({
