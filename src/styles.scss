@@ -19,3 +19,37 @@ body {
   transform: scale(0.95);
   filter: grayscale(1);
 }
+
+.block:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.form_error {
+  font-weight: 500;
+  font-size: .9rem;
+  color: rgb(201, 43, 43);
+
+  > fa-icon {
+    margin-left: .3rem;
+  }
+
+  animation: shake 400ms ease-in-out 1;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-0.5rem);
+  }
+  50% {
+    transform: translateX(0.5rem);
+  }
+  75% {
+    transform: translateX(-0.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

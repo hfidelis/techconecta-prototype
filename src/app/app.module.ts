@@ -16,7 +16,8 @@ import { PostPageComponent } from './components/pages/post-page/post-page.compon
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 import { MessagerComponent } from './components/messager/messager.component';
-import { CreatePostComponent } from './components/create-post/create-post.component'
+import { CreatePostComponent } from './components/create-post/create-post.component';
+import { CRUDUsersComponent } from './components/crud-users/crud-users.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
     LoginPageComponent,
     RegisterPageComponent,
     MessagerComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    CRUDUsersComponent
   ],
   imports: [
     BrowserModule,
