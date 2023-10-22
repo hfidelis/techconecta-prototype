@@ -16,6 +16,9 @@
   <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=1D63ED&color=1f2026">
 </div>
 
+# Testando remotamente 🌐
+**Acesse http://20.226.34.135:4200**
+
 # Testando localmente 🚀
 ## Usando ``npm`` 📦 :
 **Clone o repositório em sua máquina**
