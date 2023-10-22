@@ -39,8 +39,10 @@ export class PostPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.fetchPost()
-    this.fetchPostComments()
+    setTimeout(() => {
+      this.fetchPost()
+      this.fetchPostComments()
+    }, 400);
   }
 
   fetchPost() {
