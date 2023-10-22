@@ -53,3 +53,18 @@ body {
     transform: translateX(0);
   }
 }
+
+@keyframes load {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: .2;
+  }
+  to {
+    opacity: 1;
+  }
+}
