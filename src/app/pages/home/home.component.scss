@@ -13,6 +13,17 @@ main {
     justify-content: space-around;
     padding: 0 4rem;
 
+    @media (max-width: 800px) {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      padding: 0 4rem;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      padding: 0 1rem;
+    }
+
     .button {
       display: flex;
       align-items: center;
@@ -25,13 +36,18 @@ main {
       padding: .6rem 1.2rem;
     }
 
-    div {
+    .search_div {
 
       display: flex;
       align-items: center;
       justify-content: center;
       min-width: 40%;
       box-shadow: 0 .4rem 1.2rem rgb(0 0 0 / .7);
+
+      @media (max-width: 800px) {
+        min-width: 100%;
+        order: 1;
+      }
 
       input[type="search"] {
         font-size: 1.2rem;
@@ -43,6 +59,11 @@ main {
         outline: none;
         color: $white;
         min-width: 80%;
+        height: 100%;
+
+        @media (max-width: 1200px) {
+          font-size: .9rem;
+        }
 
         &::placeholder {
           color: $white;
@@ -63,12 +84,17 @@ main {
         background-color: $black;
         color: $white;
         cursor: pointer;
+
+        @media (max-width: 1200px) {
+          font-size: .9rem;
+        }
       }
     }
 
     #filterButton {
       border: .1em solid $white;
       background-color: $black;
+      font-size: 1rem;
       color: $white;
       box-shadow: 0 .4rem 1.2rem rgb(0 0 0 / .7);
 
@@ -81,6 +107,7 @@ main {
       color: $black;
       background-color: $white;
       border: none;
+      font-size: 1rem;
       text-transform: uppercase;
       transition: all 400ms;
       box-shadow: 0 .4rem 1.2rem rgb(0 0 0 / .7);
@@ -93,8 +120,17 @@ main {
 
   }
 
-  .columns {
-    margin: 0;
+  .posts {
+    animation: fadeOut 500ms ease-in-out;
+
+    .columns {
+      margin: 0;
+
+      @media (max-width: 600px) {
+        padding: 0 !important;
+      }
+    }
   }
+
 
 }
