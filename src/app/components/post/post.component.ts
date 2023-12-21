@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Post } from 'src/app/models/Post.model';
-import { IconDefinition, faEye, faCalendarDays, faUser } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition, faCalendarDays, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.development';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-post',
@@ -9,13 +11,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
+  baseUrl = environment.baseApiUrl
   @Input() post!: Post;
-  faEye: IconDefinition = faEye;
   faCalendarDays: IconDefinition = faCalendarDays;
   faUser: IconDefinition = faUser;
 
   constructor(
     private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
