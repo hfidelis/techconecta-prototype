@@ -17,7 +17,7 @@
 </div>
 
 # Testando remotamente 🌐
-**Acesse http://20.226.34.135:80**
+**Acesse http://20.226.34.135:4200**
 
 # Testando localmente 🚀
 ## Usando ``npm`` 📦 :

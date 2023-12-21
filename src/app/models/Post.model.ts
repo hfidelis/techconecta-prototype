@@ -1,13 +1,17 @@
-import { User } from "./User.model"
-
 export interface Post {
-  postId: number
-  creator: User
+  id: number
+  authorName: string
   category: string
   createdAt: string
   title: string
   subtitle: string
   content: string
   postImage: string
-  postViews: number
+  authorId: number
+  comments?: [{content: string, author: Author, createdAt: string}]
+}
+
+export interface Author{
+  name: string
+  userImage: string
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MessagerService } from 'src/app/services/messager.service';
+import { MessagerService } from 'src/app/services/messager/messager.service';
 import {
   IconDefinition,
   faFolderPlus,
@@ -12,6 +12,8 @@ import {
   faEyeSlash,
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
+import { UserService } from 'src/app/services/user/user.service';
+import { User } from 'src/app/models/User.model';
 
 @Component({
   selector: 'app-register-page',
@@ -36,11 +38,12 @@ export class RegisterPageComponent implements OnInit {
   constructor(
     private router: Router,
     private messagerService: MessagerService,
-  ) {}
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
-      username: new FormControl('', [
+      name: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20),
@@ -52,12 +55,15 @@ export class RegisterPageComponent implements OnInit {
       ]),
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(8)
+        Validators.minLength(8),
+        Validators.pattern(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/)
       ]),
       confirm_password: new FormControl('', [
         Validators.required,
-        Validators.minLength(8)
+        Validators.minLength(8),
+        Validators.pattern(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/)
       ]),
+      userImage: new FormControl('')
     })
 
     this.confirm_password!.valueChanges.subscribe({
@@ -73,8 +79,8 @@ export class RegisterPageComponent implements OnInit {
     })
   }
 
-  get username() {
-    return this.registerForm.get('username')!;
+  get name() {
+    return this.registerForm.get('name')!;
   }
 
   get email() {
@@ -120,5 +126,43 @@ export class RegisterPageComponent implements OnInit {
 
   changeConfirmPassword() {
     this.isConfirmPasswordVisible = !this.isConfirmPasswordVisible
+  }
+  onImageSelected(event: any): void {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    this.registerForm.patchValue({
+      userImage: file,
+    });
+    this.registerForm.get('userImage')?.updateValueAndValidity();
+  }
+  submitDetails() {
+    if (this.registerForm.invalid) return;
+    const formData = new FormData();
+  formData.append('name', this.name.value);
+  formData.append('email', this.email.value);
+  formData.append('password', this.password.value);
+  formData.append('userImage', this.registerForm.get('userImage')?.value);
+    this.userService.createUser(formData).subscribe(
+      response => {
+        this.messagerService.addAlert({
+          type: 'success',
+          title: 'Registrado!',
+          icon: faFolderPlus,
+          message: 'Realize o seu login com sua nova conta!',
+          timeout: 3000,
+        });
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 500);
+      },
+      error => {
+        this.messagerService.addAlert({
+          type: 'danger',
+          title: 'Erro!',
+          icon: faCircleExclamation,
+          message: error.error.message,
+          timeout: 3000,
+        });
+      }
+    );
   }
 }
